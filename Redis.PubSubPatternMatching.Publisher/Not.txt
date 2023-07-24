@@ -1,0 +1,5 @@
+﻿Redis.PubSubPatternMatching.Subscriber projesi ile birlikte başlatılması lazım.
+
+Publisher kanala yazar, Subscriber okur.
+
+MyChannel.* kanalına mesaj yazar

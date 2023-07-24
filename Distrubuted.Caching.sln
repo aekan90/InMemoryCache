@@ -11,6 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis.PubSub.Publisher.Exam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis.PubSub.Subscriber.Example", "Redis.PubSub.Subscriber.Example\Redis.PubSub.Subscriber.Example.csproj", "{55AA1BB4-F57D-4D53-B2A9-D132D53E0DCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis.PubSubPatternMatching.Publisher", "Redis.PubSubPatternMatching.Publisher\Redis.PubSubPatternMatching.Publisher.csproj", "{68F7BC08-4DB3-4A7A-9C5A-4F59BC737C2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis.PubSubPatternMatching.Subscriber", "Redis.PubSubPatternMatching.Subscriber\Redis.PubSubPatternMatching.Subscriber.csproj", "{8012F622-4882-45DB-B860-A26C3E49E0B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.Publisher.Api", "Notification.PublisherApi\Notification.Publisher.Api.csproj", "{7751ADA7-ABA6-41E5-AB1D-5B660A06EDBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.Subscriber.Web", "Notification.Subscriber.Web\Notification.Subscriber.Web.csproj", "{7B5BADFE-0BAD-40C7-899C-FAB234211CD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +41,22 @@ Global
 		{55AA1BB4-F57D-4D53-B2A9-D132D53E0DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55AA1BB4-F57D-4D53-B2A9-D132D53E0DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55AA1BB4-F57D-4D53-B2A9-D132D53E0DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F7BC08-4DB3-4A7A-9C5A-4F59BC737C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F7BC08-4DB3-4A7A-9C5A-4F59BC737C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F7BC08-4DB3-4A7A-9C5A-4F59BC737C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F7BC08-4DB3-4A7A-9C5A-4F59BC737C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8012F622-4882-45DB-B860-A26C3E49E0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8012F622-4882-45DB-B860-A26C3E49E0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8012F622-4882-45DB-B860-A26C3E49E0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8012F622-4882-45DB-B860-A26C3E49E0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7751ADA7-ABA6-41E5-AB1D-5B660A06EDBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7751ADA7-ABA6-41E5-AB1D-5B660A06EDBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7751ADA7-ABA6-41E5-AB1D-5B660A06EDBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7751ADA7-ABA6-41E5-AB1D-5B660A06EDBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5BADFE-0BAD-40C7-899C-FAB234211CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5BADFE-0BAD-40C7-899C-FAB234211CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5BADFE-0BAD-40C7-899C-FAB234211CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5BADFE-0BAD-40C7-899C-FAB234211CD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

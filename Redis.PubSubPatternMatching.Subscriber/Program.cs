@@ -5,7 +5,9 @@ ConnectionMultiplexer redisConnection = await ConnectionMultiplexer.ConnectAsync
 
 ISubscriber subscriber = redisConnection.GetSubscriber();
 
-await subscriber.SubscribeAsync("myChannel", (channel, message) =>
+// MyChannel.* --> MyChannel. ile başlayan tüm gruplara abone ol.
+// MyChannel.Grup1, MyChannel.Grup2 gibi tüm gruplara üye.
+await subscriber.SubscribeAsync("MyChannel.*", (channel, message) =>
 {
     Console.WriteLine("myChannel : " + message);
 });

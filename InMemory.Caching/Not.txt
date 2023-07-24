@@ -1,0 +1,5 @@
+﻿Memory Cache Projesi
+
+.Net'in local cachleme mekanizması örneği
+
+Cache yazar ve okur

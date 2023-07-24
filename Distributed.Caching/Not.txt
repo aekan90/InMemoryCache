@@ -1,0 +1,5 @@
+﻿Redis Cache Projesi
+
+Redis'in local cachleme mekanizması örneği.
+
+Cache yazar ve okur

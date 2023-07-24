@@ -1,0 +1,5 @@
+﻿Redis.PubSubPatternMatching.Publisher projesi ile birlikte başlatılması lazım. + powershellden de subscribe olabiliriz.
+
+Publisher kanala yazar, Subscriber okur.
+
+MyChannel.* kanalına yazılan mesajları okur.

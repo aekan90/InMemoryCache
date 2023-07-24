@@ -1,0 +1,3 @@
+﻿Redis.PubSub.Publisher projesi ile birlikte başlatılması lazım.
+
+Publisher kanala yazar, Subscriber okur.

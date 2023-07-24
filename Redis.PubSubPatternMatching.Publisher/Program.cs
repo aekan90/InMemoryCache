@@ -10,5 +10,5 @@ while (true)
     Console.WriteLine("PUBLISHER");
     Console.Write("Mesaj : ");
     string message = Console.ReadLine();
-    await subscriber.PublishAsync("myChannel", message);
+    await subscriber.PublishAsync("MyChannel.*", message);
 }
