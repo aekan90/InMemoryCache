@@ -19,13 +19,19 @@ namespace Distributed.Caching.Controllers
         {
             await _distributedCache.SetStringAsync("name", name, options: new()
             {
-                AbsoluteExpiration = DateTime.Now.AddSeconds(30),
-                SlidingExpiration = TimeSpan.FromSeconds(5)
+                //SlidingExpiration = TimeSpan.FromSeconds(5),
+                //AbsoluteExpiration = DateTime.Now.AddSeconds(30)
+
+                SlidingExpiration = TimeSpan.FromSeconds(15)
+
             });
             await _distributedCache.SetAsync("surname", Encoding.UTF8.GetBytes(surname), options: new()
             {
-                AbsoluteExpiration = DateTime.Now.AddSeconds(30),
-                SlidingExpiration = TimeSpan.FromSeconds(5)
+                //SlidingExpiration = TimeSpan.FromSeconds(5),
+                //AbsoluteExpiration = DateTime.Now.AddSeconds(30)
+
+                SlidingExpiration = TimeSpan.FromSeconds(15)
+
             });
             return Ok("Cache entry 'NAME' set successfully.");
         }
