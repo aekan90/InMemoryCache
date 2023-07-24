@@ -41,5 +41,21 @@ namespace InMemory.Caching.Controllers
             return Ok("Cache entry deleted successfully.");
         }
 
+        [HttpGet("setDate")]
+        public void SetDate()
+        {
+            _memoryCache.Set<DateTime>("date", DateTime.Now, options: new()
+            {
+                AbsoluteExpiration = DateTime.Now.AddSeconds(30),
+                SlidingExpiration = TimeSpan.FromSeconds(5)
+            });
+        }
+
+        [HttpGet("getDate")]
+        public DateTime GetDate()
+        {
+            return _memoryCache.Get<DateTime>("date");
+        }
+
     }
 }
