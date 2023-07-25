@@ -1,7 +1,16 @@
+﻿using Microsoft.AspNetCore.Http.Connections;
+using NotificationWeb;
+using StackExchange.Redis;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
+
+// Redis Configuration
+string RedisConnection = builder.Configuration.GetConnectionString("Redis");
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(RedisConnection));
 
 var app = builder.Build();
 
@@ -13,7 +22,19 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.MapHub<NotificationHub>("/NotificationHub", options =>
+{
+    options.Transports =
+        HttpTransportType.WebSockets |
+        HttpTransportType.LongPolling;
+}
+);
 
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapRazorPages();
+//    endpoints.MapHub<NotificationHub>("/notificationHub"); // NotificationHub'ı eşleştirin
+//});
 
 
 app.UseHttpsRedirection();

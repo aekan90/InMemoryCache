@@ -4,7 +4,47 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Notifications</title>
+</head>
+<body>
+    <h1>Real-Time Notifications</h1>
+    <div>
+        <input type="text" id="message" required />
+        <button id="sendButton">Send Notification</button>
+    </div>
+    <div id="notifications"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.9/signalr.min.js"></script>
+    <script>
+        const messageInput = document.getElementById("message");
+        const sendButton = document.getElementById("sendButton");
+        const notificationsDiv = document.getElementById("notifications");
+
+        const connection = new signalR.HubConnectionBuilder()
+    .withUrl("https://localhost:7186/notificationHub") // {PORT} kısmını doğru port numarası ile değiştirin
+    .build();
+
+        connection.on("ReceiveNotification", (message) => {
+            const p = document.createElement("p");
+            p.textContent = message;
+            notificationsDiv.appendChild(p);
+        });
+
+        connection.start().catch(err => console.error(err));
+
+        sendButton.addEventListener("click", async () => {
+            const message = messageInput.value;
+            try {
+                await connection.invoke("SendNotification", message);
+            } catch (err) {
+                console.error(err);
+            }
+                });
+    </script>
+</body>
+</html>
