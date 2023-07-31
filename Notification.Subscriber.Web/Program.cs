@@ -22,7 +22,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.MapHub<NotificationHub>("/NotificationHub", options =>
+app.MapHub<NotificationHub>("/NotificationHub", options => 
 {
     options.Transports =
         HttpTransportType.WebSockets |
